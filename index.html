@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Veinbysl's — 2D illustrator (anime & semi-realism). Read the webcomic Bloodstitch, commission me, and follow my socials.">
+<meta name="theme-color" content="#151015">
+<title>Veinbysl's — Links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@500;600&family=Great+Vibes&family=Inter:wght@400;500;600;700&family=Italiana&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#151015; --surface:#201619; --surface-2:#2a1b20;
+  --border:rgba(240,205,214,.14);
+  --text:#f5eeef; --muted:#c9b8bb;
+  --crimson:#c9184a; --crimson-bright:#ff7589;
+  --green:#6fd3a0; --glow:rgba(201,24,74,.20);
+  --radius:0px;
+  --font-wordmark:'Great Vibes',cursive;
+  --font-heading:'Cormorant Garamond',serif;
+  --wordmark-size:clamp(3.2rem,10vw,4.8rem);
+  --wordmark-spacing:0;
+  color-scheme:dark;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;
+  background-image:radial-gradient(900px 420px at 50% -140px,var(--glow),transparent 70%)}
+::selection{background:var(--crimson);color:#fff}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--crimson-bright);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;z-index:99;background:var(--crimson);color:#fff;padding:.6rem 1.1rem;font-weight:600}
+.skip:focus{left:0}
+.wrap{max-width:680px;margin:0 auto;padding:0 1.25rem}
+
+.hero{padding:4.5rem 1.25rem 1rem;text-align:center;position:relative}
+.hero::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:min(92%,720px);height:1px;background:linear-gradient(90deg,transparent,var(--crimson),transparent)}
+.wordmark{font-family:var(--font-wordmark);font-weight:400;font-size:var(--wordmark-size);letter-spacing:var(--wordmark-spacing);line-height:1.15}
+.wordmark span{color:var(--crimson-bright)}
+.tagline{margin-top:.4rem;font-size:.76rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}
+.welcome{margin:1.5rem auto 1.1rem;max-width:46ch;color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:.55rem;padding:.42rem 1rem;border-radius:var(--radius);
+  border:1px solid;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.pill .dot{width:8px;height:8px;border-radius:50%}
+.pill.open{color:var(--green);border-color:rgba(111,211,160,.45);background:rgba(111,211,160,.08)}
+.pill.open .dot{background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2.2s infinite}
+.pill.closed{color:var(--crimson-bright);border-color:rgba(255,117,137,.45);background:rgba(201,24,74,.10)}
+.pill.closed .dot{background:var(--crimson-bright)}
+@keyframes pulse{50%{opacity:.4}}
+.hint{display:block;margin-top:.7rem;font-size:.8rem;color:var(--muted)}
+
+.divider{display:flex;align-items:center;gap:1rem;max-width:680px;margin:3.2rem auto;padding:0 1.25rem;color:var(--crimson-bright)}
+.divider::before,.divider::after{content:"";flex:1;height:1px}
+.divider::before{background:linear-gradient(90deg,transparent,var(--border))}
+.divider::after{background:linear-gradient(90deg,var(--border),transparent)}
+
+section{text-align:center}
+.kicker{font-size:.7rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--crimson-bright)}
+h2{font-family:var(--font-heading);font-weight:600;font-size:clamp(1.6rem,4.5vw,2.05rem);margin:.35rem 0 1.4rem}
+
+.links{display:grid;gap:.7rem;max-width:460px;margin:0 auto}
+.card{display:flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.2rem;border-radius:var(--radius);text-align:center;
+  border:1px solid var(--border);background:linear-gradient(180deg,var(--surface),rgba(32,22,25,.55));
+  transition:border-color .25s,transform .25s,box-shadow .25s}
+.card:hover{border-color:rgba(255,117,137,.55);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,24,74,.16)}
+.card .name{font-weight:600;font-size:.95rem}
+.card .sub{display:block;font-size:.78rem;font-weight:400;color:var(--muted)}
+.card svg{width:16px;height:16px;flex-shrink:0;color:var(--muted);transition:color .25s,transform .25s}
+.card:hover svg{color:var(--crimson-bright);transform:translate(2px,-2px)}
+
+.sheet{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.sheet-track{display:flex;transition:transform .45s cubic-bezier(.22,.8,.3,1)}
+.slide{min-width:100%;aspect-ratio:3/4;padding:1.25rem}
+.slide img{width:100%;height:100%;object-fit:contain;border-radius:var(--radius);user-select:none;-webkit-user-drag:none;pointer-events:none}
+.ph{width:100%;height:100%;border:1.5px dashed rgba(240,205,214,.28);border-radius:var(--radius);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:var(--muted)}
+.ph b{font-family:var(--font-heading);font-weight:600;font-size:2.6rem;color:var(--crimson-bright)}
+.ph small{font-size:.76rem;letter-spacing:.12em}
+.sheet-bar{display:flex;align-items:center;justify-content:center;gap:1.1rem;padding:.8rem;border-top:1px solid var(--border)}
+.sheet-bar button{width:44px;height:44px;border-radius:var(--radius);border:1px solid var(--border);display:grid;place-items:center;transition:border-color .2s,color .2s}
+.sheet-bar button:hover{border-color:var(--crimson-bright);color:var(--crimson-bright)}
+.sheet-bar svg{width:18px;height:18px}
+#page-count{font-size:.82rem;letter-spacing:.12em;color:var(--muted);min-width:9ch}
+@media(max-width:560px){.slide{padding:.75rem}}
+
+.cta-label{margin:2.4rem 0 .9rem;font-size:.72rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--crimson-bright)}
+.cta-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:1.05rem 1.4rem;border-radius:var(--radius);
+  font-weight:600;font-size:.95rem;border:1px solid transparent;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s}
+.btn-solid{background:var(--crimson);color:#fff;box-shadow:0 6px 22px rgba(201,24,74,.30)}
+.btn-solid:hover{background:#e02458;transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,24,74,.40)}
+.btn-ghost{border-color:var(--border);background:var(--surface)}
+.btn-ghost:hover{border-color:var(--crimson-bright);transform:translateY(-2px)}
+.small{margin-top:.9rem;font-size:.82rem;color:var(--muted)}
+.small a{color:var(--crimson-bright);text-decoration:underline;text-underline-offset:3px}
+
+.bio{color:var(--muted);max-width:56ch;margin:0 auto 1.2rem;white-space:pre-line}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.4rem}
+.chip{font-size:.74rem;font-weight:600;letter-spacing:.08em;padding:.35rem .85rem;border-radius:var(--radius);border:1px solid var(--border);color:var(--muted)}
+.email{margin-top:1.1rem;font-size:.85rem;color:var(--muted)}
+.email a{color:var(--crimson-bright)}
+
+.socials{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap}
+.social{width:52px;height:52px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);
+  display:grid;place-items:center;transition:transform .2s,border-color .2s,color .2s}
+.social svg{width:21px;height:21px;fill:currentColor}
+.social:hover{border-color:var(--crimson-bright);color:var(--crimson-bright);transform:translateY(-3px)}
+
+footer{margin-top:4rem;padding:2.2rem 1.25rem;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.8rem}
+footer p+p{margin-top:.35rem}
+
+@media(max-width:560px){.cta-row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<script>
+/* ╔═══════════════════════════════════════════════════════════════╗
+   ║  ✏️ EDIT ME — the ONLY box you need to touch.                  ║
+   ║  Rule: keep the quotes "" and commas , exactly as they are.    ║
+   ╚═══════════════════════════════════════════════════════════════╝ */
+const CONFIG = {
+
+  status: "open",        // "open" or "closed"
+  font: "gothic",     // signature | gothic | editorial | luxury | poster
+  theme: "crimson",      // crimson | violet | emerald | sapphire | gold
+
+  tagline: "2D Digital Artist · Anime/Manga & Semi-Realism",
+  welcome: "Welcome. Find my comic, commission, and socials below.",
+
+  bio: "Hi, I'm Veinbysl, a 2D artist with 5+ years of freelance experience, specializing in semi-realism, anime/manga, and stylized aesthetics. From concept art and comics/manga to backgrounds, illustrations, and pixel art. If you have a story, game, or illustration in mind, feel free to reach out with your project details!",
+
+  email: "veinbysl@gmail.com",
+
+  links: {
+    tapas:        "https://tapas.io/series/Bloodstitch/info",  // TODO: your Tapas URL
+    globalcomix:  "https://globalcomix.com/c/bloodstitch",  // TODO: your GlobalComix URL
+    webtoon_en:   "https://www.webtoons.com/en/canvas/bloodstitch/list?title_no=1157425",  // TODO: Webtoon Canvas (EN) URL
+    webtoon_id:   "https://www.webtoons.com/id/canvas/bloodstitch/list?title_no=1157467",  // TODO: Webtoon Canvas (ID) URL
+    kofi:         "https://ko-fi.com/veinbysl",  // TODO: Ko-Fi URL
+    kirke:        "https://kirke.social/veinbysl",  // TODO: Kirke Social URL
+    kirke_invite: "https://kirke.social?i=61k5itkuxml",  // TODO: Kirke invitation code URL
+    tiktok:       "https://www.tiktok.com/@veinbysl",  // TODO: TikTok URL
+    instagram:    "https://www.instagram.com/veinbysl/",  // TODO: Instagram URL
+    x:            "https://x.com/veinbysl",  // TODO: X / Twitter URL
+    artstation:   "https://www.artstation.com/veinbysl",  // TODO: ArtStation URL
+  },
+
+  /* Upload your sheet pages to an "images" folder on GitHub, then
+     list them here, e.g. sheetImages: ["images/sheet-1.jpg", ...] */
+  sheetImages: ["sheet-1.png","sheet-2.png","sheet-3.png","sheet-4.png","sheet-5.png"],
+};
+/* ═══ end of EDIT ME box ═══ */
+</script>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hero">
+  <h1 class="wordmark">Veinbysl<span>'s</span></h1>
+  <p class="tagline" id="tagline">2D Illustrator · Anime &amp; Semi-Realism</p>
+  <p class="welcome" id="welcome">Welcome. Find my comics, commissions, and socials below.</p>
+  <p><span class="pill open" data-status><span class="dot" aria-hidden="true"></span><span class="status-text">Commissions Open</span></span></p>
+  <span class="hint">Full terms &amp; pricing below</span>
+</header>
+
+<main id="main">
+
+  <div class="divider" aria-hidden="true"><span>❖</span></div>
+
+  <section aria-labelledby="comic-h">
+    <div class="wrap">
+      <p class="kicker">Featured Webcomic</p>
+      <h2 id="comic-h">Read Bloodstitch Here</h2>
+      <div class="links">
+        <a class="card" data-link="tapas" href="#" target="_blank" rel="noopener">
+          <span><span class="name">Tapas</span><span class="sub">English edition</span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+        <a class="card" data-link="globalcomix" href="#" target="_blank" rel="noopener">
+          <span><span class="name">GlobalComix</span><span class="sub">English edition</span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+        <a class="card" data-link="webtoon_en" href="#" target="_blank" rel="noopener">
+          <span><span class="name">Webtoon Canvas (EN)</span><span class="sub">English edition</span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+        <a class="card" data-link="webtoon_id" href="#" target="_blank" rel="noopener">
+          <span><span class="name">Webtoon Canvas (ID)</span><span class="sub">Edisi Bahasa Indonesia</span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span>❖</span></div>
+
+  <section aria-labelledby="comm-h">
+    <div class="wrap">
+      <p class="kicker">Work With Me</p>
+      <h2 id="comm-h">Commission Info</h2>
+
+      <div class="sheet" id="sheet" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Commission sheet, 6 pages">
+        <div class="sheet-track" id="track">
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="Page 1 of 5"><div class="ph"><b>01</b><small>ADD COMMISSION SHEET IMAGE</small></div></div>
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="Page 2 of 5"><div class="ph"><b>02</b><small>ADD COMMISSION SHEET IMAGE</small></div></div>
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="Page 3 of 5"><div class="ph"><b>03</b><small>ADD COMMISSION SHEET IMAGE</small></div></div>
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="Page 4 of 5"><div class="ph"><b>04</b><small>ADD COMMISSION SHEET IMAGE</small></div></div>
+          <div class="slide" role="group" aria-roledescription="slide" aria-label="Page 5 of 5"><div class="ph"><b>05</b><small>ADD COMMISSION SHEET IMAGE</small></div></div>
+        </div>
+        <div class="sheet-bar">
+          <button id="prev" aria-label="Previous page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+          <span id="page-count" aria-live="polite">Page 1 / 6</span>
+          <button id="next" aria-label="Next page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+      </div>
+
+      <h3 class="cta-label">Commission Me On</h3>
+      <div class="cta-row">
+        <a class="btn btn-solid" data-link="kofi" href="#" target="_blank" rel="noopener">Commission via Ko-Fi</a>
+        <a class="btn btn-ghost" data-link="kirke" href="#" target="_blank" rel="noopener">Commission via Kirke Social</a>
+      </div>
+      <p class="small"><a data-link="kirke_invite" href="#" target="_blank" rel="noopener">Kirke invitation code</a> if you haven't joined yet.</p>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span>❖</span></div>
+
+  <section aria-labelledby="about-h">
+    <div class="wrap">
+      <p class="kicker">The Artist</p>
+      <h2 id="about-h">About Me</h2>
+      <p class="bio" id="bio">Hi, I'm a 2D artist with 5 years of freelance experience, focused on semi-realism, anime/manga, and stylized aesthetics. I take on concept art, comics/manga, backgrounds &amp; environments, illustrations, and pixel art — working in Photoshop, Clip Studio Paint, and Blender. If you have a story, game, or illustration in mind, feel free to reach out with your project details!</p>
+      <div class="chips">
+        <span class="chip">Anime/Manga</span><span class="chip">Semi-Realism</span>
+        <span class="chip">Concept Art</span><span class="chip">Illustration</span>
+        <span class="chip">Comic</span>
+      </div>
+      <p class="email">Business &amp; collabs: <a data-email href="mailto:veinbysl@gmail.com">veinbysl@gmail.com</a></p>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><span>❖</span></div>
+
+  <section aria-labelledby="follow-h">
+    <div class="wrap">
+      <p class="kicker">Stay Updated</p>
+      <h2 id="follow-h">Follow Me</h2>
+      <div class="socials">
+        <a class="social" data-link="tiktok" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <a class="social" data-link="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23c1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.7 21.31.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.41-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg>
+        </a>
+        <a class="social" data-link="x" href="#" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.59-6.64 7.59H.47l8.6-9.83L0 1.15h7.59l5.24 6.93zM17.61 20.64h2.04L6.49 3.24H4.3z"/></svg>
+        </a>
+        <a class="social" data-link="artstation" href="#" target="_blank" rel="noopener" aria-label="ArtStation">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 17.72l2.03 3.51h.01a2.42 2.42 0 0 0 2.16 1.33h13.46l-2.15-3.72H3.18zm24 .92a2.42 2.42 0 0 0-.33-1.22L13.01 1.22A2.42 2.42 0 0 0 10.91 0H6.7l10.64 18.44h6.66zM8.51 4.12 1.22 16.79a2.42 2.42 0 0 0-.33 1.22h11.53z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Veinbysl's. All artwork is mine. Do not repost or use without permission.</p>
+</footer>
+
+<script>
+/* ═══ ENGINE — no editing needed below ═══ */
+const FONTS = {
+  signature:{ w:"'Great Vibes', cursive",       h:"'Cormorant Garamond', serif", size:"clamp(3.2rem,10vw,4.8rem)", sp:"0" },
+  gothic:   { w:"'Cinzel', serif",              h:"'Cinzel', serif",             size:"clamp(1.9rem,6.5vw,2.9rem)", sp:".14em" },
+  editorial:{ w:"'Playfair Display', serif",    h:"'Playfair Display', serif",   size:"clamp(2.4rem,7.5vw,3.5rem)", sp:".01em" },
+  luxury:   { w:"'Italiana', serif",            h:"'Cormorant Garamond', serif", size:"clamp(2.6rem,8vw,3.9rem)",  sp:".10em" },
+  poster:   { w:"'Bebas Neue', sans-serif",     h:"'Cormorant Garamond', serif", size:"clamp(2.6rem,8vw,3.9rem)",  sp:".12em" },
+};
+const THEMES = {
+  crimson: { accent:"#c9184a", bright:"#ff7589", glow:"rgba(201,24,74,.20)" },
+  violet:  { accent:"#6d28d9", bright:"#b794f6", glow:"rgba(109,40,217,.20)" },
+  emerald: { accent:"#047857", bright:"#6ee7b7", glow:"rgba(4,120,87,.22)" },
+  sapphire:{ accent:"#1d4ed8", bright:"#93c5fd", glow:"rgba(29,78,216,.22)" },
+  gold:    { accent:"#a16207", bright:"#eac87a", glow:"rgba(161,98,7,.20)" },
+};
+const st = document.documentElement.style;
+const f = FONTS[CONFIG.font] || FONTS.signature;
+st.setProperty("--font-wordmark", f.w);
+st.setProperty("--font-heading", f.h);
+st.setProperty("--wordmark-size", f.size);
+st.setProperty("--wordmark-spacing", f.sp);
+const t = THEMES[CONFIG.theme] || THEMES.crimson;
+st.setProperty("--crimson", t.accent);
+st.setProperty("--crimson-bright", t.bright);
+st.setProperty("--glow", t.glow);
+
+document.querySelectorAll("[data-link]").forEach(a => {
+  const url = CONFIG.links[a.dataset.link];
+  if (url) a.href = url;
+});
+
+const emailLink = document.querySelector("[data-email]");
+if (CONFIG.email){
+  emailLink.href = "mailto:" + CONFIG.email;
+  emailLink.textContent = CONFIG.email;
+}
+
+const pill = document.querySelector("[data-status]");
+const isOpen = CONFIG.status === "open";
+pill.classList.remove("open", "closed");
+pill.classList.add(isOpen ? "open" : "closed");
+pill.querySelector(".status-text").textContent = isOpen ? "Commissions Open" : "Commissions Closed";
+
+document.getElementById("tagline").textContent = CONFIG.tagline;
+document.getElementById("welcome").textContent = CONFIG.welcome;
+document.getElementById("bio").textContent = CONFIG.bio;
+
+const slides = document.querySelectorAll(".slide");
+CONFIG.sheetImages.forEach((src, i) => {
+  if (src && slides[i]) slides[i].innerHTML = '<img src="' + src + '" alt="Commission sheet page ' + (i + 1) + '">';
+});
+
+const track = document.getElementById("track");
+const total = track.children.length;
+const count = document.getElementById("page-count");
+let i = 0;
+function go(n){
+  i = (n + total) % total;
+  track.style.transform = "translateX(-" + (i * 100) + "%)";
+  count.textContent = "Page " + (i + 1) + " / " + total;
+}
+document.getElementById("prev").addEventListener("click", () => go(i - 1));
+document.getElementById("next").addEventListener("click", () => go(i + 1));
+document.getElementById("sheet").addEventListener("keydown", e => {
+  if (e.key === "ArrowLeft"){ go(i - 1); e.preventDefault(); }
+  if (e.key === "ArrowRight"){ go(i + 1); e.preventDefault(); }
+});
+let x0 = null;
+track.addEventListener("pointerdown", e => x0 = e.clientX);
+track.addEventListener("pointerup", e => {
+  if (x0 === null) return;
+  const d = e.clientX - x0;
+  if (Math.abs(d) > 40) d < 0 ? go(i + 1) : go(i - 1);
+  x0 = null;
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
